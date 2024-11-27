@@ -1,13 +1,20 @@
-'''A cashier has currency notes of denominations 10, 50 and 100. If the amount to be withdrawn
-is input through the keyboard in hundreds, find the total number of currency notes of each
-denomination the cashier will have to give to the withdrawer.'''
+'''In a town, the percentage of men is 52. The percentage of total literacy is 48. If total percentage
+of literate men is 35 of the total population, write a program to find the total number of
+illiterate men and women if the population of the town is 80,000.'''
+totpop= 80000
 
-amt=int(input("Enter the amount:"))
-h=amt//100
-amt=amt%100
-f=amt//50
-amt=amt%50
-t=amt//10
-print("The cashier will have to give",h,"notes of 100")
-print("The cashier will have to give",f,"notes of 50")
-print("The cashier will have to give",t,"notes of 10")
+per_men = 52
+per_litrcy = 48
+pr_lit_men = 35
+
+tot_men = (per_men / 100) * totpop
+tot_wmn = totpop - tot_men
+
+tot_litrte = (per_litrcy / 100) * totpop
+lit_men = (pr_lit_men / 100) * totpop
+lit_wmn = tot_litrte - lit_men
+iltrt_men = tot_men - lit_men
+iltrt_wmn = tot_wmn - lit_wmn
+
+print("Total illiterate men:", int(iltrt_men))
+print("Total illiterate women:", int(iltrt_wmn))
